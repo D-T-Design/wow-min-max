@@ -1,0 +1,172 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+.caps {
+  text-transform: capitalize;
+}
+
+.input-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: auto;
+  & > div {
+    min-height: 100px;
+    &.level {
+      grid-column-start: 2;
+    }
+  }
+}
+
+.faction,
+.race,
+.playerclass,
+.spec {
+  display: flex;
+  & > div {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.inactive {
+  filter: grayscale(100%) brightness(50%);
+}
+
+.faction-icon,
+.class-icon,
+.race-icon,
+.spec-icon {
+  cursor: pointer;
+  img {
+    max-width: 100%;
+  }
+}
+
+.results-container {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  padding: 0 50px 10px;
+}
+
+.character {
+  &-sheet {
+    padding-bottom: 10px;
+    border: 1px solid lightgray;
+    display: inline-block;
+    width: 450px;
+  }
+  &-stats {
+    display: flex;
+    min-height: 105px;
+    &-base,
+    &-combat {
+      width: 50%;
+    }
+    &-base {
+      border: 1px solid lightgray;
+    }
+    &-combat {
+      &-melee,
+      &-ranged {
+        height: 50%;
+        border: 1px solid lightgray;
+      }
+    }
+  }
+  &-gear {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    &-mid {
+      display: grid;
+      grid-template-rows: 1fr auto auto;
+      &:after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    }
+    &-weapons {
+      display: grid;
+      margin: 10px auto 0;
+      grid-template-columns: 60px 60px 60px 36px;
+      grid-template-rows: 60px;
+    }
+  }
+}
+
+.stat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+  text-align: left;
+  .stat {
+    float: right;
+  }
+}
+
+.gear-icon {
+  width: 60px;
+  height: 60px;
+  border: 1px solid lightgray;
+  margin: 0 auto 5px;
+  &.ammo {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+  }
+  &:last-child {
+    margin: 0 auto;
+  }
+}
+
+.resist-icons {
+  float: right;
+  & > div {
+    border: 1px solid lightgray;
+    width: 36px;
+    height: 36px;
+  }
+}

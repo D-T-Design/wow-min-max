@@ -1,33 +1,52 @@
-.App {
-  text-align: center;
-}
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
+.App { text-align: center; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.App-logo { -webkit-animation: App-logo-spin infinite 20s linear; animation: App-logo-spin infinite 20s linear; height: 40vmin; pointer-events: none; }
 
-.App-link {
-  color: #61dafb;
-}
+.App-header { background-color: #282c34; min-height: 100vh; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-size: calc(10px + 2vmin); color: white; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.App-link { color: #61dafb; }
+
+@-webkit-keyframes App-logo-spin { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+
+@keyframes App-logo-spin { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+.clearfix:after { content: ""; clear: both; display: table; }
+
+.caps { text-transform: capitalize; }
+
+.input-container { display: grid; grid-template-columns: repeat(7, 1fr); margin: auto; }
+.input-container > div { min-height: 100px; }
+.input-container > div.level { grid-column-start: 2; }
+
+.faction, .race, .playerclass, .spec { display: -webkit-box; display: -ms-flexbox; display: flex; }
+.faction > div, .race > div, .playerclass > div, .spec > div { width: 50px; height: 50px; }
+
+.inactive { -webkit-filter: grayscale(100%) brightness(50%); filter: grayscale(100%) brightness(50%); }
+
+.faction-icon, .class-icon, .race-icon, .spec-icon { cursor: pointer; }
+.faction-icon img, .class-icon img, .race-icon img, .spec-icon img { max-width: 100%; }
+
+.results-container { display: grid; grid-template-columns: 450px 1fr; padding: 0 50px 10px; }
+
+.character-sheet { padding-bottom: 10px; border: 1px solid lightgray; display: inline-block; width: 450px; }
+.character-stats { display: -webkit-box; display: -ms-flexbox; display: flex; min-height: 105px; }
+.character-stats-base, .character-stats-combat { width: 50%; }
+.character-stats-base { border: 1px solid lightgray; }
+.character-stats-combat-melee, .character-stats-combat-ranged { height: 50%; border: 1px solid lightgray; }
+.character-gear { display: grid; grid-template-columns: 80px 1fr 80px; }
+.character-gear-mid { display: grid; grid-template-rows: 1fr auto auto; }
+.character-gear-mid:after { content: ""; clear: both; display: table; }
+.character-gear-weapons { display: grid; margin: 10px auto 0; grid-template-columns: 60px 60px 60px 36px; grid-template-rows: 60px; }
+
+.stat-list { list-style: none; margin: 0; padding: 0 10px; text-align: left; }
+.stat-list .stat { float: right; }
+
+.gear-icon { width: 60px; height: 60px; border: 1px solid lightgray; margin: 0 auto 5px; }
+.gear-icon.ammo { width: 40px; height: 40px; margin: auto; }
+.gear-icon:last-child { margin: 0 auto; }
+
+.resist-icons { float: right; }
+.resist-icons > div { border: 1px solid lightgray; width: 36px; height: 36px; }
