@@ -20,14 +20,7 @@ const raceData = [
   {
     race: "human",
     faction: "alliance",
-    availableClasses: [
-      "mage",
-      "paladin",
-      "priest",
-      "rogue",
-      "warrior",
-      "warlock"
-    ]
+    availableClasses: ["mage", "paladin", "priest", "rogue", "warrior", "warlock"]
   },
   {
     race: "nightelf",
@@ -94,16 +87,7 @@ const classData = [
   },
   {
     type: "warrior",
-    race: [
-      "dwarf",
-      "gnome",
-      "human",
-      "nightelf",
-      "orc",
-      "tauren",
-      "troll",
-      "undead"
-    ],
+    race: ["dwarf", "gnome", "human", "nightelf", "orc", "tauren", "troll", "undead"],
     spec: ["arms", "fury", "prot"]
   }
 ];
@@ -123,23 +107,18 @@ const Faction = props => (
   <div className="faction">
     <h2>Faction</h2>
     {factionData.map((faction, index) => (
-      <div key={index} className="faction-icon">
+      <div
+        key={index}
+        className={
+          props.chosenFaction !== faction.faction && props.chosenFaction !== ""
+            ? "faction-icon inactive"
+            : "faction-icon active"
+        }
+      >
         <img
           src={`${factionURL}${faction.faction}.png`}
           alt={faction.faction}
-          onClick={() =>
-            props.changeFaction(
-              "faction",
-              faction.faction,
-              props.clearRaceClassSpec
-            )
-          }
-          className={
-            props.chosenFaction !== faction.faction &&
-            props.chosenFaction !== ""
-              ? "inactive"
-              : null
-          }
+          onClick={() => props.changeFaction("faction", faction.faction, props.clearRaceClassSpec)}
         />
       </div>
     ))}
@@ -147,21 +126,19 @@ const Faction = props => (
 );
 const Race = props => (
   <div className="race">
-  <h2>Race</h2>
+    <h2>Race</h2>
     {raceData.map((race, index) =>
       props.faction === race.faction ? (
-        <div key={index} className="race-icon">
+        <div
+          key={index}
+          className={`race-icon ${
+            props.chosenRace !== race.race && props.chosenRace !== "" ? "inactive" : "active"
+          }`}
+        >
           <img
             src={`${raceURL}${race.race}-male.png`}
             alt={race.race}
-            onClick={() =>
-              props.changeRace("race", race.race, props.clearClassSpec)
-            }
-            className={
-              props.chosenRace !== race.race && props.chosenRace !== ""
-                ? "inactive"
-                : null
-            }
+            onClick={() => props.changeRace("race", race.race, props.clearClassSpec)}
           />
         </div>
       ) : null
@@ -170,10 +147,15 @@ const Race = props => (
 );
 const PlayerClass = props => (
   <div className="playerclass">
-  <h2>Class</h2>
+    {props.race && <h2>Class</h2>}
     {classData.map((type, index) =>
       type.race.includes(props.race) ? (
-        <div key={index} className="class-icon">
+        <div
+          key={index}
+          className={`class-icon ${
+            props.chosenClass !== type.type && props.chosenClass !== "" ? "inactive" : "active"
+          }`}
+        >
           <img
             src={`${classURL}${type.type}.png`}
             alt={type.type}
@@ -181,9 +163,7 @@ const PlayerClass = props => (
               props.changeClass("classPicked", type.type, props.clearSpec);
             }}
             className={
-              props.chosenClass !== type.type && props.chosenClass !== ""
-                ? "inactive"
-                : null
+              props.chosenClass !== type.type && props.chosenClass !== "" ? "inactive" : null
             }
           />
         </div>
@@ -193,22 +173,22 @@ const PlayerClass = props => (
 );
 const Spec = props => (
   <div className="spec">
-  <h2>Spec</h2>
+    {props.classPicked && <h2>Spec</h2>}
     {classData.map(type => {
       if (type.type === props.classPicked) {
         const icon = type.spec.map((spec, index) => (
-          <div key={index} className="spec-icon">
+          <div
+            key={index}
+            className={`spec-icon ${
+              props.specPicked !== spec && props.specPicked !== "" ? "inactive" : "active"
+            }`}
+          >
             <img
               src={`${specURL}${type.type}-${spec}.png`}
               alt={`${type.type}-${spec}`}
               onClick={() => {
                 props.changeSpec("spec", spec);
               }}
-              className={
-                props.specPicked !== spec && props.specPicked !== ""
-                  ? "inactive"
-                  : null
-              }
             />
           </div>
         ));

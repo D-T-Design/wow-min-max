@@ -28,53 +28,24 @@ const specNames = {
   fury: "Fury"
 };
 
+const armorURL = process.env.PUBLIC_URL + "/assets/img/armor/";
+
 const calcStats = (raceName, className, level) => {
   const raceBaseStats = baseStats[raceName];
-  const bonusStats = classBonus[className];
   const statBoostPerLvl = statsPerLevel[className];
+  const bonusStats = classBonus[className];
   const statList = ["agi", "int", "spi", "sta", "str"];
   const finalStats = {
     ...raceBaseStats
   };
-  // for (const stat in bonusStats) {
-  //   finalStats[stat] = raceBaseStats[stat] + bonusStats[stat];
-  // }
   for (const stat in statBoostPerLvl) {
     const levelDifference = level - 1;
     const statDifference = levelDifference * statBoostPerLvl[stat];
-    bonusStats[stat] &&
-      (finalStats[stat] = finalStats[stat] + bonusStats[stat]);
-    finalStats[stat] = !bonusStats[stat]
-      ? finalStats[stat] + statDifference
-      : bonusStats[stat] + finalStats[stat] + statDifference;
+    bonusStats[stat]
+      ? (finalStats[stat] = Math.round(finalStats[stat] + bonusStats[stat] + statDifference))
+      : (finalStats[stat] = Math.round(finalStats[stat] + statDifference));
   }
-
-  // const calcLvlStats = () => {
-  //   const levelDifference = level - 1;
-  //   const finalStats = {
-  //     ...raceBaseStats
-  //   };
-  //   for (const stat in bonusStats) {
-  //     finalStats[stat] = raceBaseStats[stat] + bonusStats[stat];
-  //   }
-  // };
-  console.log(
-    "calcStats Input ",
-    raceBaseStats,
-    bonusStats,
-    statBoostPerLvl,
-    statList,
-    finalStats
-  );
-  // const levelStatsCalc = (statName, statValue) => {
-  //   const levelDifference = level - 1;
-  //   const statDefault = raceStarting[statName];
-  //   const useStat = className !== "" ? statValue : statDefault;
-  //   const calculatedStat = Math.round(
-  //     parseFloat(levelDifference * playerStatsPerLevel[statName]) + useStat
-  //   );
-  //   return calculatedStat;
-  // };
+  console.log("calcStats Input ", raceBaseStats, bonusStats, statBoostPerLvl, statList, finalStats);
   return (
     <ul className="stat-list">
       {statList.map((stat, index) => {
@@ -114,14 +85,14 @@ const CharacterSheet = props => (
       <span className="caps">
         {props.state.race === "nightelf" ? "Night Elf" : props.state.race}
       </span>{" "}
-      <span className="caps">
-        {props.state.spec && specNames[props.state.spec]}
-      </span>{" "}
+      <span className="caps">{props.state.spec && specNames[props.state.spec]}</span>{" "}
       <span className="caps">{props.state.classPicked}</span>
     </h2>
     <section className="character-gear">
       <div className="character-gear-left">
-        <div className="gear-icon">Head</div>
+        <div className="gear-icon">
+          <img src={`${armorURL}helm.png`} alt="helm"/>
+        </div>
         <div className="gear-icon">Neck</div>
         <div className="gear-icon">Shoulders</div>
         <div className="gear-icon">Back</div>
@@ -142,11 +113,7 @@ const CharacterSheet = props => (
         </div>
         <div className="character-stats">
           <div className="character-stats-base">
-            {calcStats(
-              props.state.race,
-              props.state.classPicked,
-              props.state.level
-            )}
+            {calcStats(props.state.race, props.state.classPicked, props.state.level)}
           </div>
           <div className="character-stats-combat">
             <div className="character-stats-combat-melee">Melee</div>

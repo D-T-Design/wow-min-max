@@ -52,16 +52,16 @@ h1 {
   flex-flow: row wrap;
   justify-content: center;
   & > div {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
   h2 {
     width: 100%;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.1ch;
-    margin: 0 auto 5px;
+    letter-spacing: 0.2ch;
+    margin: 0 auto 10px;
   }
 }
 
@@ -69,11 +69,26 @@ h1 {
   label {
     display: block;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.1ch;
-    margin: 0 auto 5px;
+    letter-spacing: 0.2ch;
+    margin: 0 auto 10px;
     width: 100%;
+    font-weight: bold;
+  }
+  input {
+    background-color: #222;
+    color: lightgray;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 5px;
+    border: 1px solid #373533;
+    border-top: 1px solid #514f4c;
+    box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    width: 4ch;
+    text-align: center;
   }
 }
 
@@ -86,9 +101,26 @@ h1 {
 .race-icon,
 .spec-icon {
   cursor: pointer;
+  margin: 0 4px;
+  border-radius: 5px;
+  border: 1px solid #373533;
+  border-top: 1px solid #514f4c;
+  box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: all 0.2s ease;
   img {
     max-width: 100%;
   }
+  &:hover {
+    filter: brightness(125%);
+  }
+  &.active {
+    box-shadow: 0 0 0 1px #bc9902;
+  }
+}
+
+.faction-icon {
+  border-radius: 50%;
 }
 .container {
   width: 1600px;
@@ -115,11 +147,16 @@ h1 {
 
 .character {
   &-sheet {
-    padding-bottom: 10px;
-    border: 1px solid lightgray;
-    display: inline-block;
     width: 450px;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    border: 1px solid #838280;
+    border-top: 1px solid #a9a7a1;
     border-radius: 10px;
+    background: rgb(16, 16, 16);
+    background: linear-gradient(0deg, rgba(16, 16, 16, 1) 5%, rgba(60, 57, 55, 1) 95%);
+    box-shadow: 0 0 0 2px #565552, inset 0px 15px 25px rgba(0, 0, 0, 0.5),
+      0px 10px 15px rgba(0, 0, 0, 0.5);
   }
   &-stats {
     display: flex;
@@ -178,8 +215,16 @@ h1 {
 .gear-icon {
   width: 60px;
   height: 60px;
-  border: 1px solid lightgray;
-  margin: 0 auto 5px;
+  border: 1px solid #838280;
+  border-top: 1px solid #a9a7a1;
+  overflow: hidden;
+  border-radius: 5px;
+  background: rgb(16, 16, 16);
+  background: linear-gradient(0deg, rgba(16, 16, 16, 1) 5%, rgba(60, 57, 55, 1) 95%);
+  box-shadow: 0 0 0 2px #565552, inset 0px 15px 25px rgba(0, 0, 0, 0.5),
+    0px 10px 15px rgba(0, 0, 0, 0.5);
+  margin: 0 auto 6px;
+  display: flex;
   &.ammo {
     width: 40px;
     height: 40px;
@@ -187,6 +232,13 @@ h1 {
   }
   &:last-child {
     margin: 0 auto;
+  }
+  img {
+    box-shadow: inset 0px 15px 25px rgba(0, 0, 0, 0.5);
+    filter: saturate(0%) brightness(50%);
+    width: 60px;
+    max-width: 100%;
+    margin: auto;
   }
 }
 
