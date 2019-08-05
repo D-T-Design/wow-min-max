@@ -10,6 +10,8 @@ import {
 } from "./components/characterinput/CharacterInput";
 import "./App.css";
 
+const logoURL = process.env.PUBLIC_URL + "/assets/img/wow-min-max_logo.png";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -68,9 +70,20 @@ class App extends React.Component {
   render() {
     return (
       <div className="App" style={{ textAlign: "center" }}>
-        <h1>WoW Min-Max</h1>
+        <div className="container nav">
+          <h1 className="left">
+            <img
+              className="logo"
+              src={logoURL}
+              alt="World of Warcraft Classic - Min/Max"
+            />
+          </h1>
+        </div>
         <section className="input-container">
-          <Level changeLevel={this.updateState} currentLevel={this.state.value} />
+          <Level
+            changeLevel={this.updateState}
+            currentLevel={this.state.level}
+          />
           <Faction
             chosenFaction={this.state.faction}
             changeFaction={this.updateState}
@@ -95,8 +108,10 @@ class App extends React.Component {
           />
         </section>
         <section className="results-container">
-          <CharacterSheet state={this.state} />
-          <SuggestionsSection />
+          <div className="container">
+            <CharacterSheet state={this.state} />
+            <SuggestionsSection />
+          </div>
         </section>
       </div>
     );

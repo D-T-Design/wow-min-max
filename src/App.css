@@ -1,52 +1,169 @@
-*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+*,
+*:after,
+*:before {
+  box-sizing: border-box; }
 
-.App { text-align: center; }
+html {
+  font-size: 16px;
+  background-color: #222;
+  color: lightgray; }
 
-.App-logo { -webkit-animation: App-logo-spin infinite 20s linear; animation: App-logo-spin infinite 20s linear; height: 40vmin; pointer-events: none; }
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table; }
 
-.App-header { background-color: #282c34; min-height: 100vh; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-size: calc(10px + 2vmin); color: white; }
+.caps {
+  text-transform: capitalize; }
 
-.App-link { color: #61dafb; }
+h1 .logo {
+  max-width: 200px; }
 
-@-webkit-keyframes App-logo-spin { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100px;
+  background-color: #111;
+  padding: 15px 50px;
+  box-shadow: 0 0 15px #505050;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15); }
+  .input-container > div {
+    align-self: auto;
+    margin: 0 0.625rem; }
 
-@keyframes App-logo-spin { from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
-.clearfix:after { content: ""; clear: both; display: table; }
+.level,
+.faction,
+.race,
+.playerclass,
+.spec {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+  .level > div,
+  .faction > div,
+  .race > div,
+  .playerclass > div,
+  .spec > div {
+    width: 50px;
+    height: 50px; }
+  .level h2,
+  .faction h2,
+  .race h2,
+  .playerclass h2,
+  .spec h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1ch;
+    margin: 0 auto 5px; }
 
-.caps { text-transform: capitalize; }
+.level label {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1ch;
+  margin: 0 auto 5px;
+  width: 100%; }
 
-.input-container { display: grid; grid-template-columns: repeat(7, 1fr); margin: auto; }
-.input-container > div { min-height: 100px; }
-.input-container > div.level { grid-column-start: 2; }
+.inactive {
+  filter: grayscale(100%) brightness(50%); }
 
-.faction, .race, .playerclass, .spec { display: -webkit-box; display: -ms-flexbox; display: flex; }
-.faction > div, .race > div, .playerclass > div, .spec > div { width: 50px; height: 50px; }
+.faction-icon,
+.class-icon,
+.race-icon,
+.spec-icon {
+  cursor: pointer; }
+  .faction-icon img,
+  .class-icon img,
+  .race-icon img,
+  .spec-icon img {
+    max-width: 100%; }
 
-.inactive { -webkit-filter: grayscale(100%) brightness(50%); filter: grayscale(100%) brightness(50%); }
+.container {
+  width: 1600px;
+  max-width: 100%;
+  padding: 0 40px;
+  margin: auto;
+  align-self: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+  .container.nav {
+    justify-content: flex-start; }
 
-.faction-icon, .class-icon, .race-icon, .spec-icon { cursor: pointer; }
-.faction-icon img, .class-icon img, .race-icon img, .spec-icon img { max-width: 100%; }
+.left {
+  text-align: left; }
 
-.results-container { display: grid; grid-template-columns: 450px 1fr; padding: 0 50px 10px; }
+.results-container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 50px 10px; }
 
-.character-sheet { padding-bottom: 10px; border: 1px solid lightgray; display: inline-block; width: 450px; }
-.character-stats { display: -webkit-box; display: -ms-flexbox; display: flex; min-height: 105px; }
-.character-stats-base, .character-stats-combat { width: 50%; }
-.character-stats-base { border: 1px solid lightgray; }
-.character-stats-combat-melee, .character-stats-combat-ranged { height: 50%; border: 1px solid lightgray; }
-.character-gear { display: grid; grid-template-columns: 80px 1fr 80px; }
-.character-gear-mid { display: grid; grid-template-rows: 1fr auto auto; }
-.character-gear-mid:after { content: ""; clear: both; display: table; }
-.character-gear-weapons { display: grid; margin: 10px auto 0; grid-template-columns: 60px 60px 60px 36px; grid-template-rows: 60px; }
+.character-sheet {
+  padding-bottom: 10px;
+  border: 1px solid lightgray;
+  display: inline-block;
+  width: 450px;
+  border-radius: 10px; }
+.character-stats {
+  display: flex;
+  min-height: 105px; }
+  .character-stats-base, .character-stats-combat {
+    width: 50%; }
+  .character-stats-base {
+    border: 1px solid lightgray; }
+  .character-stats-combat-melee, .character-stats-combat-ranged {
+    height: 50%;
+    border: 1px solid lightgray; }
+.character-gear {
+  display: grid;
+  grid-template-columns: 80px 1fr 80px; }
+  .character-gear-mid {
+    display: grid;
+    grid-template-rows: 1fr auto auto; }
+    .character-gear-mid:after {
+      content: "";
+      clear: both;
+      display: table; }
+  .character-gear-weapons {
+    display: grid;
+    margin: 10px auto 0;
+    grid-template-columns: 60px 60px 60px 36px;
+    grid-template-rows: 60px; }
 
-.stat-list { list-style: none; margin: 0; padding: 0 10px; text-align: left; }
-.stat-list .stat { float: right; }
+.suggestions-section {
+  width: 800px;
+  max-width: 100%; }
 
-.gear-icon { width: 60px; height: 60px; border: 1px solid lightgray; margin: 0 auto 5px; }
-.gear-icon.ammo { width: 40px; height: 40px; margin: auto; }
-.gear-icon:last-child { margin: 0 auto; }
+.stat-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+  text-align: left; }
+  .stat-list .stat {
+    float: right; }
 
-.resist-icons { float: right; }
-.resist-icons > div { border: 1px solid lightgray; width: 36px; height: 36px; }
+.gear-icon {
+  width: 60px;
+  height: 60px;
+  border: 1px solid lightgray;
+  margin: 0 auto 5px; }
+  .gear-icon.ammo {
+    width: 40px;
+    height: 40px;
+    margin: auto; }
+  .gear-icon:last-child {
+    margin: 0 auto; }
+
+.resist-icons {
+  float: right; }
+  .resist-icons > div {
+    border: 1px solid lightgray;
+    width: 36px;
+    height: 36px; }
+
+/*# sourceMappingURL=App.css.map */

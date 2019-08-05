@@ -29,28 +29,52 @@ const specNames = {
 };
 
 const calcStats = (raceName, className, level) => {
-  const raceStarting = !baseStats[raceName] ? {} : baseStats[raceName];
-  const bonusStats = !classBonus[className] ? {} : classBonus[className];
-  const playerStatsPerLevel = !statsPerLevel[className] ? {} : statsPerLevel[className];
-  const classStats = {
-    ...raceStarting,
-    agi: raceStarting.agi + (!bonusStats.agi ? 0 : bonusStats.agi),
-    int: raceStarting.int + (!bonusStats.int ? 0 : bonusStats.int),
-    spi: raceStarting.spi + (!bonusStats.spi ? 0 : bonusStats.spi),
-    sta: raceStarting.sta + (!bonusStats.sta ? 0 : bonusStats.sta),
-    str: raceStarting.str + (!bonusStats.str ? 0 : bonusStats.str)
+  const raceBaseStats = baseStats[raceName];
+  const bonusStats = classBonus[className];
+  const statBoostPerLvl = statsPerLevel[className];
+  const statList = ["agi", "int", "spi", "sta", "str"];
+  const finalStats = {
+    ...raceBaseStats
   };
-  const levelStatsCalc = (statName, statValue) => {
+  // for (const stat in bonusStats) {
+  //   finalStats[stat] = raceBaseStats[stat] + bonusStats[stat];
+  // }
+  for (const stat in statBoostPerLvl) {
     const levelDifference = level - 1;
-    const statDefault = raceStarting[statName];
-    const useStat = className !== "" ? statDefault : statValue;
-    const calculatedStat = Math.round(
-      parseFloat(levelDifference * playerStatsPerLevel[statName]) + useStat
-    );
-    console.log(statValue, statName);
-    return calculatedStat;
-  };
-  const statList = Object.keys(classStats);
+    const statDifference = levelDifference * statBoostPerLvl[stat];
+    bonusStats[stat] &&
+      (finalStats[stat] = finalStats[stat] + bonusStats[stat]);
+    finalStats[stat] = !bonusStats[stat]
+      ? finalStats[stat] + statDifference
+      : bonusStats[stat] + finalStats[stat] + statDifference;
+  }
+
+  // const calcLvlStats = () => {
+  //   const levelDifference = level - 1;
+  //   const finalStats = {
+  //     ...raceBaseStats
+  //   };
+  //   for (const stat in bonusStats) {
+  //     finalStats[stat] = raceBaseStats[stat] + bonusStats[stat];
+  //   }
+  // };
+  console.log(
+    "calcStats Input ",
+    raceBaseStats,
+    bonusStats,
+    statBoostPerLvl,
+    statList,
+    finalStats
+  );
+  // const levelStatsCalc = (statName, statValue) => {
+  //   const levelDifference = level - 1;
+  //   const statDefault = raceStarting[statName];
+  //   const useStat = className !== "" ? statValue : statDefault;
+  //   const calculatedStat = Math.round(
+  //     parseFloat(levelDifference * playerStatsPerLevel[statName]) + useStat
+  //   );
+  //   return calculatedStat;
+  // };
   return (
     <ul className="stat-list">
       {statList.map((stat, index) => {
@@ -76,7 +100,7 @@ const calcStats = (raceName, className, level) => {
         }
         return (
           <li key={index} className="clearfix">
-            {statName}:<span className="stat">{levelStatsCalc(stat, classStats[stat])}</span>
+            {statName}:<span className="stat">{finalStats[stat]}</span>
           </li>
         );
       })}
@@ -90,7 +114,9 @@ const CharacterSheet = props => (
       <span className="caps">
         {props.state.race === "nightelf" ? "Night Elf" : props.state.race}
       </span>{" "}
-      <span className="caps">{props.state.spec && specNames[props.state.spec]}</span>{" "}
+      <span className="caps">
+        {props.state.spec && specNames[props.state.spec]}
+      </span>{" "}
       <span className="caps">{props.state.classPicked}</span>
     </h2>
     <section className="character-gear">
@@ -116,7 +142,11 @@ const CharacterSheet = props => (
         </div>
         <div className="character-stats">
           <div className="character-stats-base">
-            {calcStats(props.state.race, props.state.classPicked, props.state.level)}
+            {calcStats(
+              props.state.race,
+              props.state.classPicked,
+              props.state.level
+            )}
           </div>
           <div className="character-stats-combat">
             <div className="character-stats-combat-melee">Melee</div>
