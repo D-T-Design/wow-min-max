@@ -51,15 +51,15 @@ h3 { text-align: left; }
 .suggestions-section > div:first-child, .suggestions-section > div:nth-child(3) { margin-right: 0; }
 .suggestions-section h3 { background-color: #191919; padding: 10px 15px; }
 
-.dungeons { padding: 0 30px; }
-.dungeons h3 { width: 100%; }
-.dungeons .dungeon, .dungeons .raid { margin: 0 5px 10px; padding: 10px 15px; width: 31%; background: #101010; background: -webkit-gradient(linear, left bottom, left top, color-stop(5%, #1e1e1e), color-stop(95%, #30302d)); background: linear-gradient(0deg, #1e1e1e 5%, #30302d 95%); }
-.dungeons .dungeon h4, .dungeons .raid h4 { margin-top: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
-.dungeons .dungeon h4 a, .dungeons .raid h4 a { color: white; }
-.dungeons .dungeon a, .dungeons .raid a { text-decoration: none; color: #ebb54c; display: inline-block; }
-.dungeons .dungeon-block, .dungeons .raid-block { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; margin-bottom: 20px; }
-.dungeons .dungeon { border: 0; border-radius: 5px; border: 1px solid #373533; border-top: 1px solid #514f4c; -webkit-box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); text-align: left; border-top: 2px solid #0029f8; }
-.dungeons .raid { border: 0; border-radius: 5px; border: 1px solid #373533; border-top: 1px solid #514f4c; -webkit-box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); text-align: left; border-top: 2px solid #8600f8; }
+.dungeons-display { padding: 0 30px; }
+.dungeons-display h3 { width: 100%; }
+.dungeons-display .dungeons, .dungeons-display .raids { margin: 0 5px 10px; padding: 10px 15px; width: 31%; background: #101010; background: -webkit-gradient(linear, left bottom, left top, color-stop(5%, #1e1e1e), color-stop(95%, #30302d)); background: linear-gradient(0deg, #1e1e1e 5%, #30302d 95%); }
+.dungeons-display .dungeons h4, .dungeons-display .raids h4 { margin-top: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+.dungeons-display .dungeons h4 a, .dungeons-display .raids h4 a { color: white; }
+.dungeons-display .dungeons a, .dungeons-display .raids a { text-decoration: none; color: #ebb54c; display: inline-block; }
+.dungeons-display .dungeons { border: 0; border-radius: 5px; border: 1px solid #373533; border-top: 1px solid #514f4c; -webkit-box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); text-align: left; border-top: 2px solid #0029f8; }
+.dungeons-display .raids { border: 0; border-radius: 5px; border: 1px solid #373533; border-top: 1px solid #514f4c; -webkit-box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); text-align: left; border-top: 2px solid #8600f8; }
+.dungeons-display .dungeon-block, .dungeons-display .raid-block { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; margin-bottom: 20px; }
 
 .info-header { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2ch; }
 
@@ -77,3 +77,5 @@ h3 { text-align: left; }
 
 .resist-icons { float: right; }
 .resist-icons > div { border: 1px solid lightgray; width: 36px; height: 36px; }
+
+.quests-level, .quests-class { text-transform: capitalize; }

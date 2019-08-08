@@ -89,7 +89,7 @@ const Level = props => (
       name="level"
       type="text"
       value={props.currentLevel}
-      onChange={e => props.changeLevel("level", e.target.value)}
+      onChange={e => !isNaN(e.target.value) && props.changeLevel("level", e.target.value)}
     />
   </div>
 );

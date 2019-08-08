@@ -1,42 +1,53 @@
 import React from "react";
-import gearData from "./gearData";
+import gearData from "./gearData"; //JSON Object
 
 const DisplaySuggestedGear = props => {
+  // Create data variables from JSON file and props
   const urlObj = gearData.urls;
-  // const weaponURL = urlObj.urlWeapon;
   const armorURL = urlObj.urlArmor;
+  const filters = urlObj.filters;
+  const armorList = urlObj.armorTypes;
   const classPicked = props.class;
   const classObj = gearData[classPicked];
   const classID = classObj.classNumber;
-  const minLevel = parseInt(props.level) - 5;
-  const maxLevel = props.level >= 55 ? 60 : parseInt(props.level) + 5;
-  const slotTypes = Object.keys(urlObj.slotTypes);
-  const filters = urlObj.filters;
+  const classArmor = classObj.armorTypes;
   const classMainStats = classObj.mainStats;
-  const armorTypes = gearData[classPicked].armorTypes;
+  const slotTypes = Object.keys(urlObj.slotTypes);
+
+  // Calculate min and max level based on user inputs, level can not be negative or over 60
+  const minLevel = props.level <= 10 ? 1 : parseInt(props.level) - 5;
+  const maxLevel = props.level >= 50 ? 60 : parseInt(props.level) + 5;
+
+  // Loop armor entries to create armor type URL parameters
   let typeURL = "";
-  for (const [index, armor] of armorTypes.entries()) {
-    const code = urlObj.armorTypes[armor];
-    typeURL = typeURL + code + (index === armorTypes.length - 1 ? "" : ":");
-    console.log(typeURL);
+  for (const [index, armor] of classArmor.entries()) {
+    const code = armorList[armor];
+    typeURL = typeURL + code + (index !== classArmor.length - 1 ? ":" : "");
   }
+
+  // Create base string variables to build filter URL parameters
   const filterURLBase = "?filter-any=";
-  let statCodes = "";
-  let statCodesMin = "";
-  let statCodesMax = "";
+  let statFilters = "";
+  let statFiltersOperator = "";
+  let statMinimum = "";
+  // Loop class main stats and concatenate string for filter URL parameters
   for (const [index, stat] of classMainStats.entries()) {
-    statCodes = statCodes + filters[stat] + (index === classMainStats.length - 1 ? ";" : ":");
-    statCodesMin = statCodesMin + "2" + (index === classMainStats.length - 1 ? ";" : ":");
-    statCodesMax = statCodesMax + "1" + (index === classMainStats.length - 1 ? "" : ":");
+    statFilters = statFilters + filters[stat] + (index !== classMainStats.length - 1 ? ":" : ";");
+    statFiltersOperator =
+      statFiltersOperator + "2" + (index !== classMainStats.length - 1 ? ":" : ";");
+    statMinimum = statMinimum + "1" + (index !== classMainStats.length - 1 ? ":" : "");
   }
-  const filterURL = filterURLBase + statCodes + statCodesMin + statCodesMax;
+  const filterURL = filterURLBase + statFilters + statFiltersOperator + statMinimum;
 
   return (
     <div>
       <h4 className="gear-title">{classPicked} Gear:</h4>
       <p>{classObj.tips}</p>
-      {slotTypes.map((gearType, index) => {
-        const armorList = urlObj.armorTypes;
+
+      {// Map slotTypes array, return title and link for each slot type
+      slotTypes.map((gearType, index) => {
+        // Get URL codes from armorList for slots that don't use Cloth, Leather, Mail or Plate
+        // TODO - Add Relic slot and differentiate "type" based on class input by user
         let type = typeURL;
         switch (gearType) {
           case "neck":
@@ -44,9 +55,6 @@ const DisplaySuggestedGear = props => {
             break;
           case "back":
             type = armorList["cloaks"];
-            break;
-          case "shirt":
-            type = armorList["shirts"];
             break;
           case "trinket":
             type = armorList["trinkets"];
@@ -72,7 +80,6 @@ const DisplaySuggestedGear = props => {
           </p>
         );
       })}
-      {console.log(filterURL)}
     </div>
   );
 };

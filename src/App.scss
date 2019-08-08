@@ -228,13 +228,13 @@ h3 {
     padding: 10px 15px;
   }
 }
-.dungeons {
+.dungeons-display {
   padding: 0 30px;
   h3 {
     width: 100%;
   }
-  .dungeon,
-  .raid {
+  .dungeons,
+  .raids {
     margin: 0 5px 10px;
     padding: 10px 15px;
     width: 31%;
@@ -253,22 +253,25 @@ h3 {
       color: #ebb54c;
       display: inline-block;
     }
+  }
+  .dungeons {
+    @include borderDesign();
+    text-align: left;
+    border-top: 2px solid #0029f8;
+  }
+  .raids {
+    @include borderDesign();
+    text-align: left;
+    border-top: 2px solid #8600f8;
+  }
+  .dungeon,
+  .raid {
     &-block {
       display: flex;
       flex-flow: row wrap;
       justify-content: flex-start;
       margin-bottom: 20px;
     }
-  }
-  .dungeon {
-    @include borderDesign();
-    text-align: left;
-    border-top: 2px solid #0029f8;
-  }
-  .raid {
-    @include borderDesign();
-    text-align: left;
-    border-top: 2px solid #8600f8;
   }
 }
 
@@ -345,5 +348,12 @@ h3 {
     border: 1px solid lightgray;
     width: 36px;
     height: 36px;
+  }
+}
+
+.quests {
+  &-level,
+  &-class {
+    text-transform: capitalize;
   }
 }
