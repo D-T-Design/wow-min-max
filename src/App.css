@@ -308,18 +308,13 @@ h3 {
     margin: auto;
     opacity: 0.5; }
 
-<<<<<<< HEAD
 .resist-icons { float: right; }
 .resist-icons > div { border: 1px solid lightgray; width: 36px; height: 36px; }
 
 .quests-level, .quests-class { text-transform: capitalize; }
-=======
 .resist-icons {
   float: right; }
   .resist-icons > div {
     border: 1px solid lightgray;
     width: 36px;
     height: 36px; }
-
-/*# sourceMappingURL=App.css.map */
->>>>>>> 307342bea0b07333145b5b8ab63fdef8c58d6c39
