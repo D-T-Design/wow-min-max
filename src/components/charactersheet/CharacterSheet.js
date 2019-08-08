@@ -91,7 +91,7 @@ const CharacterSheet = props => (
     <section className="character-gear">
       <div className="character-gear-left">
         <div className="gear-icon">
-          <img src={`${armorURL}helm.png`} alt="helm"/>
+          <img src={`${armorURL}helm.png`} alt="helm" />
         </div>
         <div className="gear-icon">Neck</div>
         <div className="gear-icon">Shoulders</div>

@@ -2,8 +2,6 @@ import React from "react";
 const factionURL = process.env.PUBLIC_URL + "/assets/img/faction/";
 const raceURL = process.env.PUBLIC_URL + "/assets/img/race/";
 const classURL = process.env.PUBLIC_URL + "/assets/img/class/";
-const specURL = process.env.PUBLIC_URL + "/assets/img/spec/";
-
 const factionData = [{ faction: "alliance" }, { faction: "horde" }];
 
 const raceData = [
@@ -51,44 +49,36 @@ const raceData = [
 const classData = [
   {
     type: "druid",
-    race: ["nightelf", "tauren"],
-    spec: ["balance", "feralcat", "feralbear", "resto"]
+    race: ["nightelf", "tauren"]
   },
   {
     type: "hunter",
-    race: ["dwarf", "nightelf", "orc", "tauren", "troll"],
-    spec: ["bm", "marks", "survival"]
+    race: ["dwarf", "nightelf", "orc", "tauren", "troll"]
   },
   {
     type: "mage",
-    race: ["gnome", "human", "troll", "undead"],
-    spec: ["arcane", "fire", "frost"]
+    race: ["gnome", "human", "troll", "undead"]
   },
-  { type: "paladin", race: ["dwarf", "human"], spec: ["holy", "prot", "ret"] },
+  { type: "paladin", race: ["dwarf", "human"] },
   {
     type: "priest",
-    race: ["dwarf", "nightelf", "human", "troll", "undead"],
-    spec: ["disc", "holy", "shadow"]
+    race: ["dwarf", "nightelf", "human", "troll", "undead"]
   },
   {
     type: "rogue",
-    race: ["dwarf", "gnome", "human", "nightelf", "orc", "troll", "undead"],
-    spec: ["subtlety", "assassination", "combat"]
+    race: ["dwarf", "gnome", "human", "nightelf", "orc", "troll", "undead"]
   },
   {
     type: "shaman",
-    race: ["orc", "tauren", "troll"],
-    spec: ["ele", "enh", "resto"]
+    race: ["orc", "tauren", "troll"]
   },
   {
     type: "warlock",
-    race: ["gnome", "human", "orc", "undead"],
-    spec: ["aff", "dem", "des"]
+    race: ["gnome", "human", "orc", "undead"]
   },
   {
     type: "warrior",
-    race: ["dwarf", "gnome", "human", "nightelf", "orc", "tauren", "troll", "undead"],
-    spec: ["arms", "fury", "prot"]
+    race: ["dwarf", "gnome", "human", "nightelf", "orc", "tauren", "troll", "undead"]
   }
 ];
 
@@ -118,7 +108,7 @@ const Faction = props => (
         <img
           src={`${factionURL}${faction.faction}.png`}
           alt={faction.faction}
-          onClick={() => props.changeFaction("faction", faction.faction, props.clearRaceClassSpec)}
+          onClick={() => props.changeFaction("faction", faction.faction, props.clearRaceClass)}
         />
       </div>
     ))}
@@ -138,7 +128,7 @@ const Race = props => (
           <img
             src={`${raceURL}${race.race}-male.png`}
             alt={race.race}
-            onClick={() => props.changeRace("race", race.race, props.clearClassSpec)}
+            onClick={() => props.changeRace("race", race.race, props.clearClass)}
           />
         </div>
       ) : null
@@ -160,7 +150,7 @@ const PlayerClass = props => (
             src={`${classURL}${type.type}.png`}
             alt={type.type}
             onClick={() => {
-              props.changeClass("classPicked", type.type, props.clearSpec);
+              props.changeClass("classPicked", type.type);
             }}
             className={
               props.chosenClass !== type.type && props.chosenClass !== "" ? "inactive" : null
@@ -171,33 +161,5 @@ const PlayerClass = props => (
     )}
   </div>
 );
-const Spec = props => (
-  <div className="spec">
-    {props.classPicked && <h2>Spec</h2>}
-    {classData.map(type => {
-      if (type.type === props.classPicked) {
-        const icon = type.spec.map((spec, index) => (
-          <div
-            key={index}
-            className={`spec-icon ${
-              props.specPicked !== spec && props.specPicked !== "" ? "inactive" : "active"
-            }`}
-          >
-            <img
-              src={`${specURL}${type.type}-${spec}.png`}
-              alt={`${type.type}-${spec}`}
-              onClick={() => {
-                props.changeSpec("spec", spec);
-              }}
-            />
-          </div>
-        ));
-        return icon;
-      } else {
-        return null;
-      }
-    })}
-  </div>
-);
 
-export { Level, Faction, Race, PlayerClass, Spec };
+export { Level, Faction, Race, PlayerClass };

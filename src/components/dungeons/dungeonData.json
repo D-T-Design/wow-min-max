@@ -1,0 +1,188 @@
+{
+  "dungeons": [
+    {
+      "name": "Blackfathom Deeps",
+      "zone": "Ashenvale",
+      "id": 719,
+      "zoneID": 331,
+      "level": [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+    },
+    {
+      "name": "Blackrock Depths",
+      "zone": "Blackrock Mountain",
+      "id": 1584,
+      "zoneID": 25,
+      "level": [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60]
+    },
+    {
+      "name": "Blackrock Spire",
+      "zone": "Blackrock Mountain",
+      "id": 1583,
+      "zoneID": 25,
+      "level": [57, 58, 59, 60]
+    },
+    {
+      "name": "Dire Maul",
+      "zone": "Feralas",
+      "id": 2557,
+      "zoneID": 357,
+      "level": [55, 56, 57, 58, 59, 60]
+    },
+    {
+      "name": "Gnomeregan",
+      "zone": "Dun Morogh",
+      "id": 721,
+      "zoneID": 1,
+      "level": [26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+    },
+    {
+      "name": "Maraudon",
+      "zone": "Desolace",
+      "id": 2100,
+      "zoneID": 405,
+      "level": [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60]
+    },
+    {
+      "name": "Ragefire Chasm",
+      "zone": "Orgrimmar",
+      "id": 2437,
+      "zoneID": 1637,
+      "level": [13, 14, 15, 16, 17, 18, 19]
+    },
+    {
+      "name": "Razorfen Downs",
+      "zone": "The Barrens",
+      "id": 722,
+      "zoneID": 17,
+      "level": [33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+    },
+    {
+      "name": "Razorfen Kraul",
+      "zone": "The Barrens",
+      "id": 491,
+      "zoneID": 17,
+      "level": [24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+    },
+    {
+      "name": "Scarlet Monastery",
+      "zone": "Tirisfal Glades",
+      "id": 796,
+      "zoneID": 85,
+      "level": [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
+    },
+    {
+      "name": "Scholomance",
+      "zone": "Western Plaguelands",
+      "id": 2057,
+      "zoneID": 28,
+      "level": [56, 57, 58, 59, 60]
+    },
+    {
+      "name": "Shadowfang Keep",
+      "zone": "Silverpine Forest",
+      "id": 209,
+      "zoneID": 130,
+      "level": [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+    },
+    {
+      "name": "Stratholme",
+      "zone": "Eastern Plaguelands",
+      "id": 2017,
+      "zoneID": 139,
+      "level": [56, 57, 58, 59, 60]
+    },
+    {
+      "name": "The Deadmines",
+      "zone": "Westfall",
+      "id": 1581,
+      "zoneID": 40,
+      "level": [15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+    },
+    {
+      "name": "The Stockade",
+      "zone": "Stormwind City",
+      "id": 717,
+      "zoneID": 1519,
+      "level": [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+    },
+    {
+      "name": "Uldaman",
+      "zone": "Badlands",
+      "id": 1337,
+      "zoneID": 3,
+      "level": [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49]
+    },
+    {
+      "name": "Wailing Caverns",
+      "zone": "The Barrens",
+      "id": 718,
+      "zoneID": 17,
+      "level": [15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+    },
+    {
+      "name": "Zul'Farrak",
+      "zone": "Tanaris",
+      "id": 1176,
+      "zoneID": 440,
+      "level": [43, 44, 45, 46, 47, 48, 49, 50, 51]
+    }
+  ],
+  "raids": [
+    {
+      "name": "Molten Core",
+      "zone": "Blackrock Mountain",
+      "id": 2717,
+      "zoneID": 25,
+      "level": [60],
+      "tier": 1
+    },
+    {
+      "name": "Ruins of Ahn'Qiraj",
+      "zone": "Silithus",
+      "id": 3429,
+      "zoneID": 1377,
+      "level": [60],
+      "tier": 1.5
+    },
+    {
+      "name": "Zul'Gurub",
+      "zone": "Stranglethorn Vale",
+      "id": 1977,
+      "zoneID": 33,
+      "level": [60],
+      "tier": 1.5
+    },
+    {
+      "name": "Onyxia's Lair",
+      "zone": "Dustwallow Marsh",
+      "id": 2159,
+      "zoneID": 15,
+      "level": [60],
+      "tier": 2
+    },
+    {
+      "name": "Blackwing Lair",
+      "zone": "Blackrock Mountain",
+      "id": 2677,
+      "zoneID": 25,
+      "level": [60],
+      "tier": 2
+    },
+    {
+      "name": "Ahn'Qiraj Temple",
+      "zone": "Silithus",
+      "id": 3428,
+      "zoneID": 1377,
+      "level": [60],
+      "tier": 2.5
+    },
+    {
+      "name": "Naxxramas",
+      "zone": "Eastern Plaguelands",
+      "id": 3456,
+      "zoneID": 139,
+      "level": [60],
+      "tier": 3
+    }
+  ]
+}

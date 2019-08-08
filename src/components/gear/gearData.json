@@ -1,0 +1,89 @@
+{
+  "urls": {
+    "urlWeapon": "https://classic.wowhead.com/weapons/",
+    "urlArmor": "https://classic.wowhead.com/armor/",
+    "slotTypes": {
+      "head": 1,
+      "neck": 2,
+      "shoulders": 3,
+      "chest": 5,
+      "back": 16,
+      "waist": 6,
+      "legs": 7,
+      "hands": 10,
+      "feet": 8,
+      "wrist": 9,
+      "trinket": 12,
+      "finger": 11,
+      "relic": 28,
+      "offhand": 23
+    },
+    "armorTypes": {
+      "cloth": 1,
+      "leather": 2,
+      "mail": 3,
+      "plate": 4,
+      "amulet": "-3",
+      "cloaks": "-6",
+      "rings": "-2",
+      "tabards": "-7",
+      "trinkets": "-4",
+      "shield": 6
+    },
+    "filters": { "agi": 21, "int": 23, "sta": 22, "spi": 24, "str": 20 }
+  },
+  "druid": {
+    "tips": "Druid Tips Content",
+    "classNumber": 11,
+    "armorTypes": ["cloth", "leather"],
+    "mainStats": ["agi", "int", "sta"]
+  },
+  "hunter": {
+    "tips": "Hunter Tips Content",
+    "classNumber": 3,
+    "armorTypes": ["leather", "mail"],
+    "mainStats": ["agi", "int", "sta"]
+  },
+  "mage": {
+    "tips": "Mage Tips Content",
+    "classNumber": 8,
+    "armorTypes": ["cloth"],
+    "mainStats": ["int", "sta"]
+  },
+  "paladin": {
+    "tips": "Paladin Tips Content",
+    "classNumber": 2,
+    "armorTypes": ["mail", "plate", "leather", "cloth"],
+    "mainStats": ["str", "int", "sta"]
+  },
+  "priest": {
+    "tips": "Priest Tips Content",
+    "classNumber": 5,
+    "armorTypes": ["cloth"],
+    "mainStats": ["int", "spi", "sta"]
+  },
+  "rogue": {
+    "tips": "Rogue Tips Content",
+    "classNumber": 4,
+    "armorTypes": ["leather"],
+    "mainStats": ["agi", "sta", "str"]
+  },
+  "shaman": {
+    "tips": "Shaman Tips Content",
+    "classNumber": 7,
+    "armorTypes": ["leather", "mail", "cloth"],
+    "mainStats": ["str", "int", "sta"]
+  },
+  "warlock": {
+    "tips": "Warlock Tips Content",
+    "classNumber": 9,
+    "armorTypes": ["cloth"],
+    "mainStats": ["sta", "int"]
+  },
+  "warrior": {
+    "tips": "Warrior Tips Content",
+    "classNumber": 1,
+    "armorTypes": ["mail", "plate", "leather"],
+    "mainStats": ["str", "sta", "spi"]
+  }
+}

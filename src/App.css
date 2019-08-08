@@ -8,6 +8,8 @@ html { font-size: 16px; background-color: #222; color: lightgray; }
 
 h1 .logo { max-width: 200px; }
 
+h3 { text-align: left; }
+
 .input-container { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin: auto; height: 100px; background-color: #111; padding: 15px 50px; -webkit-box-shadow: 0 0 15px #505050; box-shadow: 0 0 15px #505050; -webkit-box-shadow: 0 0 15px rgba(255, 255, 255, 0.15); box-shadow: 0 0 15px rgba(255, 255, 255, 0.15); }
 .input-container > div { -ms-flex-item-align: auto; align-self: auto; margin: 0 0.625rem; }
 
@@ -44,15 +46,34 @@ h1 .logo { max-width: 200px; }
 .character-gear-mid:after { content: ""; clear: both; display: table; }
 .character-gear-weapons { display: grid; margin: 10px auto 0; grid-template-columns: 60px 60px 60px 36px; grid-template-rows: 60px; }
 
-.suggestions-section { width: 800px; max-width: 100%; }
+.suggestions-section { width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin-top: 20px; }
+.suggestions-section > div { width: 45%; margin: 0 1.75% 1.75%; border: 0; border-radius: 5px; border: 1px solid #373533; border-top: 1px solid #514f4c; -webkit-box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); }
+.suggestions-section > div:first-child, .suggestions-section > div:nth-child(3) { margin-right: 0; }
+.suggestions-section h3 { background-color: #191919; padding: 10px 15px; }
+
+.dungeons { padding: 0 30px; }
+.dungeons h3 { width: 100%; }
+.dungeons .dungeon, .dungeons .raid { margin: 0 5px 10px; padding: 10px 15px; width: 31%; background: #101010; background: -webkit-gradient(linear, left bottom, left top, color-stop(5%, #1e1e1e), color-stop(95%, #30302d)); background: linear-gradient(0deg, #1e1e1e 5%, #30302d 95%); }
+.dungeons .dungeon h4, .dungeons .raid h4 { margin-top: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+.dungeons .dungeon h4 a, .dungeons .raid h4 a { color: white; }
+.dungeons .dungeon a, .dungeons .raid a { text-decoration: none; color: #ebb54c; display: inline-block; }
+.dungeons .dungeon-block, .dungeons .raid-block { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; margin-bottom: 20px; }
+.dungeons .dungeon { border: 0; border-radius: 5px; border: 1px solid #373533; border-top: 1px solid #514f4c; -webkit-box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); text-align: left; border-top: 2px solid #0029f8; }
+.dungeons .raid { border: 0; border-radius: 5px; border: 1px solid #373533; border-top: 1px solid #514f4c; -webkit-box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); text-align: left; border-top: 2px solid #8600f8; }
+
+.info-header { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2ch; }
+
+.tier { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2ch; text-align: right; margin-left: 10px; }
+.tier-num { display: block; font-size: 1rem; font-weight: bold; }
 
 .stat-list { list-style: none; margin: 0; padding: 0 10px; text-align: left; }
 .stat-list .stat { float: right; }
 
+.gear-title { text-transform: capitalize; }
 .gear-icon { width: 60px; height: 60px; border: 1px solid #838280; border-top: 1px solid #a9a7a1; overflow: hidden; border-radius: 5px; background: #101010; background: -webkit-gradient(linear, left bottom, left top, color-stop(5%, #101010), color-stop(95%, #3c3937)); background: linear-gradient(0deg, #101010 5%, #3c3937 95%); -webkit-box-shadow: 0 0 0 2px #565552, inset 0px 15px 25px rgba(0, 0, 0, 0.5), 0px 10px 15px rgba(0, 0, 0, 0.5); box-shadow: 0 0 0 2px #565552, inset 0px 15px 25px rgba(0, 0, 0, 0.5), 0px 10px 15px rgba(0, 0, 0, 0.5); margin: 0 auto 6px; display: -webkit-box; display: -ms-flexbox; display: flex; }
 .gear-icon.ammo { width: 40px; height: 40px; margin: auto; }
 .gear-icon:last-child { margin: 0 auto; }
-.gear-icon img { -webkit-box-shadow: inset 0px 15px 25px rgba(0, 0, 0, 0.5); box-shadow: inset 0px 15px 25px rgba(0, 0, 0, 0.5); -webkit-filter: saturate(0%) brightness(50%); filter: saturate(0%) brightness(50%); width: 60px; max-width: 100%; margin: auto; }
+.gear-icon img { -webkit-box-shadow: inset 0px 15px 25px rgba(0, 0, 0, 0.5); box-shadow: inset 0px 15px 25px rgba(0, 0, 0, 0.5); -webkit-filter: saturate(0%) brightness(50%); filter: saturate(0%) brightness(50%); width: 60px; max-width: 100%; margin: auto; opacity: 0.5; }
 
 .resist-icons { float: right; }
 .resist-icons > div { border: 1px solid lightgray; width: 36px; height: 36px; }
