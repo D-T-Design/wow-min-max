@@ -2,7 +2,7 @@ import React from "react";
 import DisplaySuggestedGear from "../gear/DisplaySuggestedGear";
 import DisplayGearNoClass from "../gear/DisplayGearNoClass";
 import DungeonDisplay from "../dungeons/DungeonDisplay";
-import { QuestDisplayClass, QuestDisplayLevel } from "../quests/QuestDisplay";
+import { QuestDisplayClass, QuestDisplayLevel, QuestDisplayZones } from "../quests/QuestDisplay";
 
 const SuggestionsSection = props => {
   return (
@@ -18,10 +18,18 @@ const SuggestionsSection = props => {
       </div>
       <div className="quests">
         <h3>Quests</h3>
-        <QuestDisplayLevel level={props.state.level} faction={props.state.faction} />
-        {props.state.classPicked && (
-          <QuestDisplayClass class={props.state.classPicked} faction={props.state.faction} />
-        )}
+        <div className="quests-boxes">
+          <QuestDisplayLevel level={props.state.level} faction={props.state.faction} />
+          {props.state.classPicked && (
+            <QuestDisplayClass class={props.state.classPicked} faction={props.state.faction} />
+          )}
+        </div>
+        <QuestDisplayZones
+          classPicked={props.state.classPicked}
+          faction={props.state.faction}
+          race={props.state.race}
+          level={props.state.level}
+        />
       </div>
       <div className="auction house">
         <h3>Gear Suggestion</h3>
