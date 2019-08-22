@@ -468,6 +468,7 @@ h3 {
         box-sizing: border-box;
         opacity: 0;
         font-size: 0.8rem;
+        text-transform: capitalize;
       }
       &:hover {
         &:after {

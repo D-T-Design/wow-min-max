@@ -1,6 +1,69 @@
 {
   "zones": [
     {
+      "name": "Ahn'Qiraj",
+      "range": [60, 60],
+      "faction": "Contested",
+      "id": 3428,
+      "tier": 3
+    },
+    {
+      "name": "Alterac Mountains",
+      "range": [27, 39],
+      "faction": "Contested",
+      "id": 36,
+      "tier": 0
+    },
+    {
+      "name": "Alterac Valley",
+      "range": [51, 60],
+      "faction": "PvP",
+      "id": 2597,
+      "tier": 4
+    },
+    {
+      "name": "Arathi Basin",
+      "range": [20, 60],
+      "faction": "PvP",
+      "id": 3358,
+      "tier": 4
+    },
+    {
+      "name": "Arathi Highlands",
+      "range": [30, 40],
+      "faction": "Contested",
+      "id": 45,
+      "tier": 0
+    },
+    {
+      "name": "Ashenvale",
+      "range": [19, 30],
+      "faction": "Contested",
+      "id": 331,
+      "tier": 0
+    },
+    {
+      "name": "Azshara",
+      "range": [42, 55],
+      "faction": "Contested",
+      "id": 16,
+      "tier": 0
+    },
+    {
+      "name": "Badlands",
+      "range": [36, 45],
+      "faction": "Contested",
+      "id": 3,
+      "tier": 0
+    },
+    {
+      "name": "Blackfathom Deeps",
+      "range": [22, 32],
+      "faction": "Contested",
+      "id": 719,
+      "tier": 2
+    },
+    {
       "name": "Blackrock Depths",
       "range": [48, 60],
       "faction": "Contested",
@@ -8,9 +71,87 @@
       "tier": 2
     },
     {
+      "name": "Blackrock Mountain",
+      "range": [48, 60],
+      "faction": "Contested",
+      "id": 25,
+      "tier": 0
+    },
+    {
+      "name": "Blackrock Spire",
+      "range": [58, 60],
+      "faction": "Contested",
+      "id": 1583,
+      "tier": 2
+    },
+    {
+      "name": "Blackwing Lair",
+      "range": [60, 60],
+      "faction": "Contested",
+      "id": 2677,
+      "tier": 3
+    },
+    {
+      "name": "Blasted Lands",
+      "range": [46, 60],
+      "faction": "Contested",
+      "id": 4,
+      "tier": 0
+    },
+    {
+      "name": "Burning Steppes",
+      "range": [50, 59],
+      "faction": "Contested",
+      "id": 46,
+      "tier": 0
+    },
+    {
+      "name": "Darkshore",
+      "range": [11, 19],
+      "faction": "alliance",
+      "id": 148,
+      "tier": 0
+    },
+    {
+      "name": "Darnassus",
+      "range": [1, 60],
+      "faction": "alliance",
+      "id": 1657,
+      "tier": 1
+    },
+    {
+      "name": "Deadwind Pass",
+      "range": [50, 60],
+      "faction": "Contested",
+      "id": 41,
+      "tier": 0
+    },
+    {
+      "name": "Desolace",
+      "range": [30, 39],
+      "faction": "Contested",
+      "id": 405,
+      "tier": 0
+    },
+    {
+      "name": "Dire Maul",
+      "range": [44, 54],
+      "faction": "Contested",
+      "id": 2557,
+      "tier": 2
+    },
+    {
+      "name": "Dun Morogh",
+      "range": [1, 12],
+      "faction": "alliance",
+      "id": 1,
+      "starter": ["dwarf", "gnome"],
+      "tier": 0
+    },
+    {
       "name": "Durotar",
       "range": [1, 12],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 14,
       "starter": ["orc", "troll"],
       "tier": 0
@@ -39,7 +180,7 @@
     {
       "name": "Elwynn Forest",
       "range": [1, 12],
-      "faction": "Alliance",
+      "faction": "alliance",
       "id": 12,
       "starter": ["human"],
       "tier": 0
@@ -61,7 +202,7 @@
     {
       "name": "Gnomeregan",
       "range": [26, 36],
-      "faction": "Alliance",
+      "faction": "alliance",
       "id": 721,
       "tier": 2
     },
@@ -75,15 +216,15 @@
     {
       "name": "Ironforge",
       "range": [1, 60],
-      "faction": "Alliance",
+      "faction": "alliance",
       "id": 1537,
       "starter": ["dwarf", "gnome", "human", "nightelf"],
-      "tier": 0
+      "tier": 1
     },
     {
       "name": "Loch Modan",
       "range": [10, 18],
-      "faction": "Alliance",
+      "faction": "alliance",
       "id": 38,
       "starter": ["dwarf", "gnome", "human"],
       "tier": 0
@@ -112,8 +253,8 @@
     },
     {
       "name": "Mulgore",
-      "range": [1, 10],
-      "faction": "Horde",
+      "range": [1, 12],
+      "faction": "horde",
       "id": 215,
       "starter": ["tauren"],
       "tier": 0
@@ -135,29 +276,29 @@
     {
       "name": "Orgrimmar",
       "range": [1, 60],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 1637,
       "starter": ["orc", "troll", "tauren"],
-      "tier": 0
+      "tier": 1
     },
     {
       "name": "Ragefire Chasm",
       "range": [15, 25],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 2437,
       "tier": 2
     },
     {
       "name": "Razorfen Downs",
       "range": [37, 47],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 722,
       "tier": 2
     },
     {
       "name": "Razorfen Kraul",
       "range": [32, 42],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 491,
       "tier": 2
     },
@@ -178,7 +319,7 @@
     {
       "name": "Scarlet Monastery",
       "range": [28, 40],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 796,
       "tier": 2
     },
@@ -199,7 +340,7 @@
     {
       "name": "Shadowfang Keep",
       "range": [20, 30],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 209,
       "tier": 2
     },
@@ -213,7 +354,7 @@
     {
       "name": "Silverpine Forest",
       "range": [10, 20],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 130,
       "tier": 0
     },
@@ -227,9 +368,9 @@
     {
       "name": "Stormwind City",
       "range": [1, 60],
-      "faction": "Alliance",
+      "faction": "alliance",
       "id": 1519,
-      "tier": 0
+      "tier": 1
     },
     {
       "name": "Stranglethorn Vale",
@@ -262,21 +403,21 @@
     {
       "name": "Teldrassil",
       "range": [1, 11],
-      "faction": "Alliance",
+      "faction": "alliance",
       "id": 141,
       "tier": 0
     },
     {
       "name": "The Barrens",
       "range": [10, 33],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 17,
       "tier": 0
     },
     {
       "name": "The Deadmines",
       "range": [15, 25],
-      "faction": "Alliance",
+      "faction": "alliance",
       "id": 1581,
       "tier": 2
     },
@@ -290,7 +431,7 @@
     {
       "name": "The Stockade",
       "range": [22, 32],
-      "faction": "Alliance",
+      "faction": "alliance",
       "id": 717,
       "tier": 2
     },
@@ -311,15 +452,16 @@
     {
       "name": "Thunder Bluff",
       "range": [1, 60],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 1638,
-      "tier": 0
+      "tier": 1
     },
     {
       "name": "Tirisfal Glades",
       "range": [1, 12],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 85,
+      "starter": ["undead"],
       "tier": 0
     },
     {
@@ -339,14 +481,14 @@
     {
       "name": "Undercity",
       "range": [1, 60],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 1497,
-      "tier": 0
+      "tier": 1
     },
     {
       "name": "Wailing Caverns",
       "range": [17, 27],
-      "faction": "Horde",
+      "faction": "horde",
       "id": 718,
       "tier": 0
     },
@@ -355,7 +497,49 @@
       "range": [10, 60],
       "faction": "PvP",
       "id": 3277,
-      "tier": 1
+      "tier": 4
+    },
+    {
+      "name": "Western Plaguelands",
+      "range": [46, 57],
+      "faction": "Contested",
+      "id": 28,
+      "tier": 0
+    },
+    {
+      "name": "Westfall",
+      "range": [9, 18],
+      "faction": "alliance",
+      "id": 40,
+      "tier": 0
+    },
+    {
+      "name": "Wetlands",
+      "range": [20, 30],
+      "faction": "Contested",
+      "id": 11,
+      "tier": 0
+    },
+    {
+      "name": "Winterspring",
+      "range": [55, 60],
+      "faction": "Contested",
+      "id": 618,
+      "tier": 0
+    },
+    {
+      "name": "Zul'Farrak",
+      "range": [46, 56],
+      "faction": "Contested",
+      "id": 1176,
+      "tier": 2
+    },
+    {
+      "name": "Zul'Gurub",
+      "range": [60, 60],
+      "faction": "Contested",
+      "id": 1977,
+      "tier": 3
     }
   ]
 }

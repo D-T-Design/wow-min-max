@@ -44,21 +44,22 @@ const QuestDisplayClass = props => {
 const QuestDisplayZones = ({ faction, race, level, classPicked }) => {
   const zoneURL = "https://classic.wowhead.com/zone=";
   const zoneData = questData.zones;
-  const nearLvl = (minLvl, target, maxLvl) => {
-    return minLvl - 3 < target && maxLvl + 3 > target;
-  };
-  const rangeCheck = (level, levelRange) => {
-    let isInRange = nearLvl(levelRange[0], parseInt(level), levelRange[1]);
-    return isInRange;
+  const zoneCheck = (level, { range, faction, tier, starter }, playerFaction) => {
+    const levelNum = parseInt(level);
+    let isInRange = range[0] <= levelNum && range[1] >= levelNum;
+    let isFaction = tier === 1 ? faction === playerFaction : true;
+    let isStarter = starter ? faction === playerFaction : true;
+    let isContested = faction === "Contested";
+    return isInRange && (isFaction || isContested) && isStarter;
   };
   const questList = zoneData.map((zone, index) => {
     let zoneType = "";
     switch (zone.tier) {
       case 0:
-        zoneType = "Open Zone";
+        zoneType = "Zone";
         break;
       case 1:
-        zoneType = "Battleground";
+        zoneType = "City";
         break;
       case 2:
         zoneType = "Dungeon";
@@ -66,11 +67,14 @@ const QuestDisplayZones = ({ faction, race, level, classPicked }) => {
       case 3:
         zoneType = "Raid";
         break;
+      case 4:
+        zoneType = "Battleground";
+        break;
       default:
         break;
     }
     return (
-      rangeCheck(level, zone.range) && (
+      zoneCheck(level, zone, faction) && (
         <div className="quests-zone" key={index}>
           <a
             className="quests-link"
@@ -85,7 +89,11 @@ const QuestDisplayZones = ({ faction, race, level, classPicked }) => {
               <em>{`(Lvl: ${zone.range[0]}-${zone.range[1]})`}</em>
             </small>
           </div>
-          {zoneType !== "Open Zone" ? (
+          {zoneType !== "Zone" ? (
+            <div class="faction-icon" data-faction={zoneType}>
+              <img src={`${zoneURLString}${zoneType}.png`} alt={zoneType} />
+            </div>
+          ) : zoneType === "City" && zone.faction === faction ? (
             <div class="faction-icon" data-faction={zoneType}>
               <img src={`${zoneURLString}${zoneType}.png`} alt={zoneType} />
             </div>
@@ -100,7 +108,12 @@ const QuestDisplayZones = ({ faction, race, level, classPicked }) => {
       )
     );
   });
-  return <div className="quests-zones"><h2>Questing Zones:</h2>{questList}</div>;
+  return (
+    <div className="quests-zones">
+      <h2>Questing Zones:</h2>
+      {questList}
+    </div>
+  );
 };
 
 export { QuestDisplayClass, QuestDisplayLevel, QuestDisplayZones };
