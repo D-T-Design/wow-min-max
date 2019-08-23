@@ -144,7 +144,26 @@ h3 {
   flex-flow: row wrap;
   justify-content: center;
   &.nav {
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.site-info {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  h2 {
+    flex-grow: 1;
+    text-align: right;
+    margin: 0 1ch 0 0;
+  }
+  p {
+    margin: 0;
+    position: relative;
+    max-width: 60ch;
+    margin-left: auto;
+    text-align: left;
   }
 }
 
@@ -229,7 +248,7 @@ h3 {
   }
 }
 .dungeons-display {
-  padding: 0 30px;
+  padding: 0 20px;
   h3 {
     width: 100%;
   }
@@ -403,6 +422,12 @@ h3 {
     justify-items: stretch;
     h2 {
       font-size: 1.2rem;
+    }
+    h4 {
+      margin-bottom: 0;
+      text-align: left;
+      color:#e0b700;
+      padding: 0 10px;
     }
   }
   &-zone {

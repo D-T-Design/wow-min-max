@@ -8,13 +8,19 @@ const SuggestionsSection = props => {
   return (
     <section className="suggestions-section">
       <div className="dungeons-display">
-        <h3>Dungeons</h3>
-        <div className="dungeon-block">
+        <h3>Suggested Zones</h3>
+        <QuestDisplayZones
+          classPicked={props.state.classPicked}
+          faction={props.state.faction}
+          race={props.state.race}
+          level={props.state.level}
+        />
+        {/*<div className="dungeon-block">
           <DungeonDisplay state={props.state} type="dungeons" />
         </div>
         <div className="raid-block">
           <DungeonDisplay state={props.state} type="raids" />
-        </div>
+  </div>*/}
       </div>
       <div className="quests">
         <h3>Quests</h3>
@@ -24,12 +30,6 @@ const SuggestionsSection = props => {
             <QuestDisplayClass class={props.state.classPicked} faction={props.state.faction} />
           )}
         </div>
-        <QuestDisplayZones
-          classPicked={props.state.classPicked}
-          faction={props.state.faction}
-          race={props.state.race}
-          level={props.state.level}
-        />
       </div>
       <div className="auction house">
         <h3>Gear Suggestion</h3>

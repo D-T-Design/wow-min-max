@@ -30,7 +30,11 @@ h3 { text-align: left; }
 .faction-icon { border-radius: 50%; }
 
 .container { width: 1600px; max-width: 100%; padding: 0 40px; margin: auto; -ms-flex-item-align: center; align-self: center; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-.container.nav { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
+.container.nav { display: grid; grid-template-columns: auto 1fr; }
+
+.site-info { font-size: 0.8rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.site-info h2 { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; text-align: right; margin: 0 1ch 0 0; }
+.site-info p { margin: 0; position: relative; max-width: 60ch; margin-left: auto; text-align: left; }
 
 .left { text-align: left; }
 
@@ -51,7 +55,7 @@ h3 { text-align: left; }
 .suggestions-section > div:first-child, .suggestions-section > div:nth-child(3) { margin-right: 0; }
 .suggestions-section h3 { background-color: #191919; padding: 10px 15px; }
 
-.dungeons-display { padding: 0 30px; }
+.dungeons-display { padding: 0 20px; }
 .dungeons-display h3 { width: 100%; }
 .dungeons-display .dungeons, .dungeons-display .raids { margin: 0 5px 10px; padding: 10px 15px; width: 31%; background: #101010; background: -webkit-gradient(linear, left bottom, left top, color-stop(5%, #1e1e1e), color-stop(95%, #30302d)); background: linear-gradient(0deg, #1e1e1e 5%, #30302d 95%); }
 .dungeons-display .dungeons h4, .dungeons-display .raids h4 { margin-top: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
@@ -86,6 +90,7 @@ h3 { text-align: left; }
 .quests-boxes p a:hover { color: #bc9902; background-color: rgba(0, 0, 0, 0.5); }
 .quests-zones { display: grid; grid-template-columns: 1fr; grid-template-rows: auto; padding: 0 10px 30px; grid-gap: 0px; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; justify-items: stretch; }
 .quests-zones h2 { font-size: 1.2rem; }
+.quests-zones h4 { margin-bottom: 0; text-align: left; color: #e0b700; padding: 0 10px; }
 .quests-zone { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 0.5rem 0.7rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); font-size: 1rem; }
 .quests-zone:last-child { border-bottom: 0; }
 .quests-zone a { color: white; font-weight: bold; text-decoration: none; display: block; text-align: left; font-size: 0.9rem; -ms-flex-item-align: center; align-self: center; }
