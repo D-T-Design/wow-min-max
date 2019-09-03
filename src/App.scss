@@ -134,6 +134,25 @@ h3 {
 .faction-icon {
   border-radius: 50%;
 }
+.selection-title {
+  width: 100%;
+  display: block;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.2ch;
+  font-weight: bold;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+  &.chosen {
+    height: 1rem;
+    overflow: visible;
+    opacity: 1;
+  }
+}
 .container {
   width: 1600px;
   max-width: 100%;
@@ -330,17 +349,29 @@ h3 {
   &-title {
     text-transform: capitalize;
   }
+  &-link {
+    display: grid;
+    text-decoration: none;
+    align-items: center;
+    width: 30%;
+    grid-template-columns: 48px 1fr;
+    grid-template-rows: 48px;
+    grid-gap: 0.5rem;
+  }
+  &-list {
+    display: flex;
+    flex-flow: column wrap;
+    height: 240px;
+  }
   &-icon {
-    width: 60px;
-    height: 60px;
-    border: 1px solid #838280;
-    border-top: 1px solid #a9a7a1;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #403f3b;
+    border-top: 1px solid #6f6f6f;
     overflow: hidden;
     border-radius: 5px;
     background: rgb(16, 16, 16);
-    background: linear-gradient(0deg, rgba(16, 16, 16, 1) 5%, rgba(60, 57, 55, 1) 95%);
-    box-shadow: 0 0 0 2px #565552, inset 0px 15px 25px rgba(0, 0, 0, 0.5),
-      0px 10px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 2px #1f1f1a, 0px 5px 10px rgba(0, 0, 0, 0.5);
     margin: 0 auto 6px;
     display: flex;
     &.ammo {
@@ -352,13 +383,20 @@ h3 {
       margin: 0 auto;
     }
     img {
-      box-shadow: inset 0px 15px 25px rgba(0, 0, 0, 0.5);
-      filter: saturate(0%) brightness(50%);
-      width: 60px;
+      width: 32px;
       max-width: 100%;
       margin: auto;
       opacity: 0.5;
     }
+  }
+  &-name {
+    display: block;
+    text-align: left;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1ch;
+    text-decoration: none;
   }
 }
 
@@ -426,7 +464,7 @@ h3 {
     h4 {
       margin-bottom: 0;
       text-align: left;
-      color:#e0b700;
+      color: #e0b700;
       padding: 0 10px;
     }
   }
@@ -467,42 +505,44 @@ h3 {
         margin-right: 5px;
       }
     }
-    .faction-icon {
-      width: 24px;
-      height: 24px;
-      margin: 0 0.5rem;
-      overflow: visible;
-      img {
-        border-radius: 50%;
-        overflow: hidden;
-      }
-      &:after {
-        content: attr(data-faction);
-        background-color: rgba(1, 7, 33, 0.8);
-        border-radius: 3px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 0;
-        position: absolute;
-        bottom: 28px;
-        left: 50%;
-        transform: translateX(-50%);
-        transition: all 0.1s ease-in-out;
-        overflow: hidden;
-        box-sizing: border-box;
-        opacity: 0;
-        font-size: 0.8rem;
-        text-transform: capitalize;
-      }
-      &:hover {
+    .faction {
+      &-icon {
+        width: 24px;
+        height: 24px;
+        margin: 0 0.5rem;
+        overflow: visible;
+        img {
+          border-radius: 50%;
+          overflow: hidden;
+        }
         &:after {
-          border: 1px solid #777777;
-          box-shadow: 0 0 0 1px #000000;
-          border-top-color: #cfcfcf;
-          height: 1.6rem;
-          padding: 0 10px;
-          opacity: 1;
+          content: attr(data-faction);
+          background-color: rgba(1, 7, 33, 0.8);
+          border-radius: 3px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 0;
+          position: absolute;
+          bottom: 28px;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: all 0.1s ease-in-out;
+          overflow: hidden;
+          box-sizing: border-box;
+          opacity: 0;
+          font-size: 0.8rem;
+          text-transform: capitalize;
+        }
+        &:hover {
+          &:after {
+            border: 1px solid #777777;
+            box-shadow: 0 0 0 1px #000000;
+            border-top-color: #cfcfcf;
+            height: 1.6rem;
+            padding: 0 10px;
+            opacity: 1;
+          }
         }
       }
     }

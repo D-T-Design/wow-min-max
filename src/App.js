@@ -2,6 +2,8 @@ import React from "react";
 // import CharacterSheet from "./components/charactersheet/CharacterSheet";
 import SuggestionsSection from "./components/charactersheet/SuggestionsSection";
 import { Level, Faction, Race, PlayerClass } from "./components/characterinput/CharacterInput";
+import PlayerInfo from "./components/misc/PlayerInfo";
+import Credits from "./components/misc/Credits";
 import "./App.css";
 
 const logoURL = process.env.PUBLIC_URL + "/assets/img/wow-min-max_logo.png";
@@ -73,8 +75,9 @@ class App extends React.Component {
         </section>
         <section className="results-container">
           <div className="container">
-            {/* <CharacterSheet state={this.state} /> */}
+            <PlayerInfo state={this.state}/>
             <SuggestionsSection state={this.state} />
+            <Credits />
           </div>
         </section>
       </div>

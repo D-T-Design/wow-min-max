@@ -8,15 +8,20 @@
       "shoulders": 3,
       "chest": 5,
       "back": 16,
+      "wrist": 9,
+      "hands": 10,
       "waist": 6,
       "legs": 7,
-      "hands": 10,
       "feet": 8,
-      "wrist": 9,
-      "trinket": 12,
       "finger": 11,
-      "relic": 28,
-      "offhand": 23
+      "trinket": 12,
+      "mainhand": 21,
+      "onehand": 13,
+      "offhand": 23,
+      "twohand": 17,
+      "ranged": 15,
+      "thrown": 25,
+      "relic": 28
     },
     "armorTypes": {
       "cloth": 1,
@@ -30,60 +35,138 @@
       "trinkets": "-4",
       "shield": 6
     },
+    "weaponTypes": {
+      "daggers": 15,
+      "fistweapons": 13,
+      "onehandedaxes": 0,
+      "onehandedmaces": 4,
+      "onehandedswords": 7,
+      "polearms": 6,
+      "staves": 10,
+      "twohandedaxes": 1,
+      "twohandedmaces": 5,
+      "twohandedswords": 8,
+      "bows": 2,
+      "crossbows": 18,
+      "guns": 3,
+      "thrown": 16,
+      "wands": 19
+    },
     "filters": { "agi": 21, "int": 23, "sta": 22, "spi": 24, "str": 20 }
   },
   "druid": {
     "tips": "Druid Tips Content",
     "classNumber": 11,
     "armorTypes": ["cloth", "leather"],
+    "weaponTypes": [
+      "staves",
+      "daggers",
+      "fistweapons",
+      "onehandedmaces",
+      "twohandedmaces",
+      "polearms"
+    ],
     "mainStats": ["agi", "int", "sta"]
   },
   "hunter": {
     "tips": "Hunter Tips Content",
     "classNumber": 3,
     "armorTypes": ["leather", "mail"],
+    "weaponTypes": [
+      "guns",
+      "bows",
+      "crossbows",
+      "staves",
+      "thrown",
+      "daggers",
+      "fistweapons",
+      "onehandedswords",
+      "twohandedswords",
+      "onehandedaxes",
+      "twohandedaxes",
+      "polearms"
+    ],
     "mainStats": ["agi", "int", "sta"]
   },
   "mage": {
     "tips": "Mage Tips Content",
     "classNumber": 8,
     "armorTypes": ["cloth"],
+    "weaponTypes": ["staves", "onehandedswords", "daggers", "wands"],
     "mainStats": ["int", "sta"]
   },
   "paladin": {
     "tips": "Paladin Tips Content",
     "classNumber": 2,
     "armorTypes": ["mail", "plate", "leather", "cloth"],
+    "weaponTypes": [
+      "onehandedaxes",
+      "onehandedmaces",
+      "onehandedswords",
+      "polearms",
+      "twohandedaxes",
+      "twohandedmaces",
+      "twohandedswords"
+    ],
     "mainStats": ["str", "int", "sta"]
   },
   "priest": {
     "tips": "Priest Tips Content",
     "classNumber": 5,
     "armorTypes": ["cloth"],
+    "weaponTypes": ["staves", "onehandedmaces", "daggers", "wands"],
     "mainStats": ["int", "spi", "sta"]
   },
   "rogue": {
     "tips": "Rogue Tips Content",
     "classNumber": 4,
     "armorTypes": ["leather"],
+    "weaponTypes": [
+      "onehandedswords",
+      "daggers",
+      "thrown",
+      "bows",
+      "crossbows",
+      "guns",
+      "fistweapons",
+      "onehandedmaces"
+    ],
     "mainStats": ["agi", "sta", "str"]
   },
   "shaman": {
     "tips": "Shaman Tips Content",
     "classNumber": 7,
     "armorTypes": ["leather", "mail", "cloth"],
+    "weaponTypes": ["staves", "onehandedmaces", "onehandedaxes", "twohandedaxes", "twohandedmaces"],
     "mainStats": ["str", "int", "sta"]
   },
   "warlock": {
     "tips": "Warlock Tips Content",
     "classNumber": 9,
     "armorTypes": ["cloth"],
+    "weaponTypes": ["daggers", "onehandedswords", "staves", "wands"],
     "mainStats": ["sta", "int"]
   },
   "warrior": {
     "tips": "Warrior Tips Content",
     "classNumber": 1,
     "armorTypes": ["mail", "plate", "leather"],
+    "weaponTypes": [
+      "guns",
+      "bows",
+      "crossbows",
+      "staves",
+      "thrown",
+      "daggers",
+      "fistweapons",
+      "onehandedswords",
+      "twohandedswords",
+      "onehandedaxes",
+      "twohandedaxes",
+      "onehandedmaces",
+      "twohandedmaces",
+      "polearms"
+    ],
     "mainStats": ["str", "sta", "spi"]
   }
 }
