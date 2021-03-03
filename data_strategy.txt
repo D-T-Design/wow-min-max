@@ -1,0 +1,4 @@
+Pull data from WoW API
+Create library of items programmatically
+Engineer library for application queries
+Design item detailed display
