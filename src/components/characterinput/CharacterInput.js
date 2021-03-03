@@ -82,83 +82,86 @@ const classData = [
   }
 ];
 
-const Level = props => (
+const Level = ({ currentLevel, changeLevel }) => (
   <div className="level">
     <label htmlFor="level">Your Level</label>
     <input
       name="level"
       type="text"
-      value={props.currentLevel}
-      onChange={e => props.changeLevel("level", e.target.value)}
+      value={currentLevel}
+      onChange={e => !isNaN(e.target.value) && changeLevel("level", e.target.value)}
     />
   </div>
 );
-const Faction = props => (
+
+const Faction = ({ chosenFaction, changeFaction, clearRaceClass }) => (
   <div className="faction">
     <h2>Faction</h2>
     {factionData.map((faction, index) => (
       <div
         key={index}
-        className={
-          props.chosenFaction !== faction.faction && props.chosenFaction !== ""
-            ? "faction-icon inactive"
-            : "faction-icon active"
-        }
+        className={`faction-icon ${
+          chosenFaction !== faction.faction && chosenFaction !== "" ? "inactive" : "active"
+        }`}
       >
         <img
           src={`${factionURL}${faction.faction}.png`}
           alt={faction.faction}
-          onClick={() => props.changeFaction("faction", faction.faction, props.clearRaceClass)}
+          data-hover={faction.faction}
+          onClick={() => changeFaction("faction", faction.faction, clearRaceClass)}
         />
       </div>
     ))}
+    <span className="selection-title chosen">{chosenFaction}</span>
   </div>
 );
-const Race = props => (
+
+const Race = ({ faction, chosenRace, changeRace, clearClass }) => (
   <div className="race">
     <h2>Race</h2>
     {raceData.map((race, index) =>
-      props.faction === race.faction ? (
+      faction === race.faction ? (
         <div
           key={index}
           className={`race-icon ${
-            props.chosenRace !== race.race && props.chosenRace !== "" ? "inactive" : "active"
+            chosenRace !== race.race && chosenRace !== "" ? "inactive" : "active"
           }`}
         >
           <img
             src={`${raceURL}${race.race}-male.png`}
             alt={race.race}
-            onClick={() => props.changeRace("race", race.race, props.clearClass)}
+            onClick={() => changeRace("race", race.race, clearClass)}
           />
         </div>
       ) : null
     )}
+    <span className="selection-title chosen">{chosenRace}</span>
   </div>
 );
-const PlayerClass = props => (
+
+const PlayerClass = ({ race, chosenClass, changeClass }) => (
   <div className="playerclass">
-    {props.race && <h2>Class</h2>}
-    {classData.map((type, index) =>
-      type.race.includes(props.race) ? (
+    {race && <h2>Class</h2>}
+    {classData.map((classType, index) =>
+      classType.race.includes(race) ? (
         <div
           key={index}
           className={`class-icon ${
-            props.chosenClass !== type.type && props.chosenClass !== "" ? "inactive" : "active"
+            chosenClass !== classType.type && chosenClass !== "" ? "inactive" : "active"
           }`}
         >
           <img
-            src={`${classURL}${type.type}.png`}
-            alt={type.type}
+            src={`${classURL}${classType.type}.png`}
+            alt={classType.type}
             onClick={() => {
-              props.changeClass("classPicked", type.type);
+              changeClass("classPicked", classType.type);
             }}
-            className={
-              props.chosenClass !== type.type && props.chosenClass !== "" ? "inactive" : null
-            }
+            className={chosenClass !== classType.type && chosenClass !== "" ? "inactive" : null}
           />
         </div>
       ) : null
     )}
+    <span className="selection-title chosen">{chosenClass}</span>
   </div>
 );
 
