@@ -58,7 +58,7 @@ const DisplaySuggestedGear = ({ classPicked, level }) => {
           // Get URL codes from armorList for slots that don't use Cloth, Leather, Mail or Plate
           // TODO - Add Relic slot and differentiate "type" based on class input by user
           let armorType = armorTypeURL;
-          let weaponType = weaponTypeURL;
+          // let weaponType = weaponTypeURL;
           switch (gearType) {
             case "neck":
               armorType = armorList["amulet"].toLowerCase();

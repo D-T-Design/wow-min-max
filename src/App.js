@@ -6,6 +6,8 @@ import PlayerInfo from "./components/misc/PlayerInfo";
 import Credits from "./components/misc/Credits";
 import "./App.css";
 
+import FetchBtn from "./components/BlizzardData";
+
 const logoURL = process.env.PUBLIC_URL + "/assets/img/wow-min-max_logo.png";
 
 class App extends React.Component {
@@ -52,6 +54,7 @@ class App extends React.Component {
               your basic level and class info, and you'll get back recommended zones, quests, items,
               and guides tailored to you!
             </p>
+            <FetchBtn/>
           </aside>
         </div>
         <section className="input-container">
