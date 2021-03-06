@@ -8,12 +8,12 @@ const zoneURL = "https://classic.wowhead.com/zone=";
 const LevelRangedQuests = ({ level, faction, classPicked }) => {
   const questURL = "https://classic.wowhead.com/quests/";
   // Choose which level range to search for WoWHead page
-  const minLevel = level <= 5 ? 1 : parseInt(level) - 5;
-  const maxLevel = level >= 55 ? 60 : parseInt(level) + 5;
+  const minLevel = level <= 5 ? 1 : parseInt(level) - 3;
+  const maxLevel = level >= 55 ? 60 : parseInt(level) + 3;
   const minLevelText = `min-req-level:${minLevel}/`;
   const maxLevelText = `max-req-level:${maxLevel}/`;
   // Choose faction ID for URL query
-  const sideNum = faction !== "alliance" ? 2 : 1;
+  const sideNum = faction !== "Alliance" ? 2 : 1;
   const sideText = `side:${sideNum}`;
   // Choose initial sorted display on WoWHead page
   const sortText = "#0-3+11";
