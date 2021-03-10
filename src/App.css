@@ -14,8 +14,9 @@ h3 { text-align: left; }
 .input-container > div { -ms-flex-item-align: auto; align-self: auto; margin: 0 0.625rem; }
 
 .level, .faction, .race, .playerclass, .spec { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-flow: row wrap; flex-flow: row wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-.level > div, .faction > div, .race > div, .playerclass > div, .spec > div { width: 40px; height: 40px; }
+.level > label, .faction > label, .race > label, .playerclass > label, .spec > label { width: 40px; height: 40px; }
 .level h2, .faction h2, .race h2, .playerclass h2, .spec h2 { width: 100%; text-align: center; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2ch; margin: 0 auto 10px; }
+.level [type="radio"], .faction [type="radio"], .race [type="radio"], .playerclass [type="radio"], .spec [type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
 
 .level label { display: block; text-align: center; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2ch; margin: 0 auto 10px; width: 100%; font-weight: bold; }
 .level input { background-color: #222; color: lightgray; font-size: 1.5rem; padding: 5px 10px; border: 0; border-radius: 5px; border: 1px solid #373533; border-top: 1px solid #514f4c; -webkit-box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 0 0 2px #2c2925, 0 5px 5px rgba(0, 0, 0, 0.5); overflow: hidden; width: 4ch; text-align: center; }
